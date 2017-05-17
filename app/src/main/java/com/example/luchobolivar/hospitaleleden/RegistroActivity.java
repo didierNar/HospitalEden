@@ -136,7 +136,7 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public int obtenerDatosJSONReg(String respuesta) {
-        Log.e("Res", respuesta);
+        Log.e("Respuesta", respuesta);
         int resultado = 0;
         try {
             JSONObject json = new JSONObject(respuesta);
