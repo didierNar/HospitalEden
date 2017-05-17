@@ -50,6 +50,7 @@ public class RegistroActivity extends AppCompatActivity {
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPass = (EditText) findViewById(R.id.etPassword);
 
+
     }
 
     public void volverInicio(View v) {
