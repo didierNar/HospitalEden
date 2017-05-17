@@ -124,7 +124,7 @@ public class RegistroActivity extends AppCompatActivity {
         int resultado = 0;
         try {
             JSONArray json = new JSONArray(respuesta);
-            Log.e("Tamnios ", json.length()+"");
+            Log.e("Tamanio", json.length()+"");
             //Verficamos que el tamaño del json sea mayor que 0
             if (json.length() > 0) {
                 resultado = 1;
