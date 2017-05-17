@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.luchobolivar.hospitaleleden.RegistroActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/btnConsul_registroCita"
+            android:layout_width="171dp"
+            android:layout_height="143dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.04"
+            android:background="#12345678"
+            app:srcCompat="@drawable/registro" />
+
+        <ImageButton
+            android:id="@+id/btnEditar"
+            android:layout_width="171dp"
+            android:layout_height="143dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.04"
+            android:background="#12345678"
+            app:srcCompat="@drawable/editar" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnHistorial"
+            android:layout_width="171dp"
+            android:layout_height="143dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.00"
+            android:background="#12345678"
+            app:srcCompat="@drawable/historial" />
+
+        <ImageButton
+            android:id="@+id/btnListadoSedes"
+            android:layout_width="171dp"
+            android:layout_height="143dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.00"
+            android:background="#12345678"
+            app:srcCompat="@drawable/listado" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnDirecciones"
+            android:layout_width="171dp"
+            android:layout_height="143dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.00"
+            android:background="#12345678"
+            app:srcCompat="@drawable/direcciones" />
+    </LinearLayout>
+
+</LinearLayout>
