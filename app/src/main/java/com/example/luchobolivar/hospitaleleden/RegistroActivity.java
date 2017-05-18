@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
+import com.example.luchobolivar.hospitaleleden.modelo.DireccionIP;
 import com.example.luchobolivar.hospitaleleden.modelo.Usuario;
 
 import org.json.JSONArray;
@@ -37,6 +38,8 @@ public class RegistroActivity extends AppCompatActivity {
     private Spinner cbGenero;
     private String[] generos = {"Seleccione un genero", "Masculino", "Femenino"};
 
+    String ip;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,8 @@ public class RegistroActivity extends AppCompatActivity {
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item, generos);
         cbGenero.setAdapter(adaptador);
 
+        ip = DireccionIP.getIp();
+
     }
 
     public void volverInicio(View v) {
@@ -66,7 +71,7 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void registrar(View v) {
-        enlace = "http://192.168.0.18/serviciosWebHospital/buscarUser.php?numero_identificacion="
+        enlace = "http://"+ip+"/serviciosWebHospital/buscarUser.php?numero_identificacion="
                 + etIdentificacion.getText().toString()+"&user_name="+etUsername.getText().toString();
         Log.e("enlace ", enlace);
         new buscarUsuario().execute(enlace);
@@ -87,7 +92,7 @@ public class RegistroActivity extends AppCompatActivity {
 
         new Usuario(id, nombre, apellido, tel, email, dir, genero, user, pass, rol);
 
-        enlaceRegistro = "http://192.168.0.18/serviciosWebHospital/crearUser.php?NUMERO_IDENTIFICACION="
+        enlaceRegistro = "http://"+ip+"/serviciosWebHospital/crearUser.php?NUMERO_IDENTIFICACION="
                 + id + "&NOMBRE=" + nombre + "&APELLIDO=" + apellido + "&TELEFONO=" + tel +
                 "&EMAIL=" + email + "&DIRECCION=" + dir + "&USER_NAME=" + user + "&GENERO_ID=" + genero +
                 "&PASSWORD=" + pass + "&ROL=" +rol;

@@ -8,18 +8,57 @@
     android:orientation="vertical"
     android:background="@drawable/background">
 
-    <EditText
-        android:id="@+id/etNombreUsuario"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Admin"
-        android:inputType="textPersonName"
-        android:textSize="25dp"
-        android:gravity="center_vertical"
-        android:drawablePadding="10dp"
-        android:padding="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:id="@+id/tvUsuario"
+        android:textSize="18sp"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="31dp">
+
+        <TextView
+            android:text="Editar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_weight="1"
+            android:text="Buscar Usuarios"
+            android:textSize="18sp"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="135dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/editar"
+            android:id="@+id/imgVEditarAdmin"
+            android:onClick="abrirEditarAdmin"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/consulta"
+            android:id="@+id/imgVBuscarUserAdmin"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>

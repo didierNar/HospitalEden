@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
+import com.example.luchobolivar.hospitaleleden.modelo.DireccionIP;
 import com.example.luchobolivar.hospitaleleden.modelo.Usuario;
+import com.example.luchobolivar.hospitaleleden.modelo.UsuarioLogueado;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Intent intent;
+    private String ip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
         connection = new HttpConnection();
 
+        ip = DireccionIP.getIp();
+
     }
 
     public void validarUsuario(View v){
         usuario = etUsuario.getText().toString();
         password = etPass.getText().toString();
-        enlace = "http://192.168.0.18/serviciosWebHospital/login.php?USER_NAME="+ usuario +"&PASSWORD=" + password + "";
+        enlace = "http://"+ip+"/serviciosWebHospital/login.php?USER_NAME="+ usuario +"&PASSWORD=" + password + "";
         new loginUsuario().execute(enlace);
     }
 
@@ -58,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
         if(user.getRol().equals("admin")){
             Intent i = new Intent(getApplicationContext(), AdministradorActivity.class);
 
-            i.putExtra("usuario", usuario);
-            i.putExtra("password", password);
+            UsuarioLogueado.setUsuario(user);
             startActivity(i);
 
         } else if (user.getRol().equals("paciente")){

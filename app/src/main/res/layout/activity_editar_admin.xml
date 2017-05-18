@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.luchobolivar.hospitaleleden.RegistroActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/etNombreAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="@string/nombre"
+                tools:ignore="SpUsage" />
+
+            <EditText
+                android:id="@+id/etApellidoAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="@string/apellido"/>
+
+            <EditText
+                android:id="@+id/etDireccionAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="@string/direccion"/>
+
+            <EditText
+                android:id="@+id/etTelefonoAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="@string/telefono"/>
+
+            <EditText
+                android:id="@+id/etEmailAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="@string/e_mail"/>
+
+            <EditText
+                android:id="@+id/etUsernameAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="@string/nombre_de_usuario"/>
+
+            <EditText
+                android:id="@+id/etPasswordAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="@string/contrase_a"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spGeneroAdmin" />
+
+            <Button
+                android:id="@+id/btEditarAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="editar"
+                android:onClick="editarAdmin"
+                android:layout_marginBottom="5dp"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnVolverInicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/inicio"
+                android:onClick="volverInicio"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

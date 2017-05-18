@@ -26,7 +26,8 @@
         <activity android:name=".Edicion_CitaActivity" />
         <activity android:name=".Historial_CitasActivity" />
         <activity android:name=".Listado_sedeActivity" />
-        <activity android:name=".DireccionActivity"></activity>
+        <activity android:name=".DireccionActivity" />
+        <activity android:name=".EditarAdminActivity"></activity>
     </application>
 
 </manifest>
