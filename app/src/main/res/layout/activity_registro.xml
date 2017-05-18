@@ -19,7 +19,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <EditText
                 android:id="@+id/etNombre"
@@ -34,7 +35,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="Nombre"/>
+                android:hint="@string/nombre"
+                tools:ignore="SpUsage" />
 
             <EditText
                 android:id="@+id/etApellido"
@@ -49,14 +51,14 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="Apellido"/>
+                android:hint="@string/apellido"/>
 
             <EditText
                 android:id="@+id/etIdentificacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="25dp"
                 android:gravity="center_vertical"
                 android:drawablePadding="10dp"
@@ -64,7 +66,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="Identificacion"/>
+                android:hint="@string/identificacion"/>
 
             <EditText
                 android:id="@+id/etDireccion"
@@ -79,14 +81,14 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="Direccion"/>
+                android:hint="@string/direccion"/>
 
             <EditText
                 android:id="@+id/etTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 android:textSize="25dp"
                 android:gravity="center_vertical"
                 android:drawablePadding="10dp"
@@ -94,22 +96,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="Telefono"/>
-
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="25dp"
-                android:gravity="center_vertical"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="30dp"
-                android:hint="Celular"/>
+                android:hint="@string/telefono"/>
 
             <EditText
                 android:id="@+id/etEmail"
@@ -124,7 +111,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="E-Mail"/>
+                android:hint="@string/e_mail"/>
 
             <EditText
                 android:id="@+id/etUsername"
@@ -139,7 +126,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="Nombre de Usuario"/>
+                android:hint="@string/nombre_de_usuario"/>
 
             <EditText
                 android:id="@+id/etPassword"
@@ -154,7 +141,12 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"
-                android:hint="Contraseña"/>
+                android:hint="@string/contrase_a"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spGenero" />
 
             <Button
                 android:id="@+id/btRegistrar"
@@ -162,13 +154,14 @@
                 android:layout_height="wrap_content"
                 android:text="Registrar"
                 android:onClick="registrar"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginBottom="5dp"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/btnVolverInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Inicio"
+                android:text="@string/inicio"
                 android:onClick="volverInicio"
                 android:layout_marginBottom="10dp"/>
 

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     public void validarUsuario(View v){
         usuario = etUsuario.getText().toString();
         password = etPass.getText().toString();
-        enlace = "http://192.168.19.2/serviciosWebHospital/login.php?USER_NAME="+ usuario +"&PASSWORD=" + password + "";
+        enlace = "http://192.168.0.18/serviciosWebHospital/login.php?USER_NAME="+ usuario +"&PASSWORD=" + password + "";
         new loginUsuario().execute(enlace);
     }
 

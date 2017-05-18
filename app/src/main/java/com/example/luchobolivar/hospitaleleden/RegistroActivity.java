@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
@@ -32,6 +34,8 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etUsername;
     private EditText etPass;
+    private Spinner cbGenero;
+    private String[] generos = {"Seleccione un genero", "Masculino", "Femenino"};
 
 
     @Override
@@ -49,7 +53,10 @@ public class RegistroActivity extends AppCompatActivity {
         etEmail = (EditText) findViewById(R.id.etEmail);
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPass = (EditText) findViewById(R.id.etPassword);
+        cbGenero = (Spinner) findViewById(R.id.spGenero);
 
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item, generos);
+        cbGenero.setAdapter(adaptador);
 
     }
 
@@ -59,7 +66,7 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void registrar(View v) {
-        enlace = "http://192.168.1.9/serviciosWebHospital/buscarUser.php?numero_identificacion="
+        enlace = "http://192.168.0.18/serviciosWebHospital/buscarUser.php?numero_identificacion="
                 + etIdentificacion.getText().toString()+"&user_name="+etUsername.getText().toString();
         Log.e("enlace ", enlace);
         new buscarUsuario().execute(enlace);
@@ -75,12 +82,12 @@ public class RegistroActivity extends AppCompatActivity {
         String email = etEmail.getText().toString();
         String user = etUsername.getText().toString();
         String pass = etPass.getText().toString();
-        int genero = 1;
+        int genero = cbGenero.getSelectedItemPosition();
         String rol = "paciente";
 
         new Usuario(id, nombre, apellido, tel, email, dir, genero, user, pass, rol);
 
-        enlaceRegistro = "http://192.168.1.9/serviciosWebHospital/crearUser.php?NUMERO_IDENTIFICACION="
+        enlaceRegistro = "http://192.168.0.18/serviciosWebHospital/crearUser.php?NUMERO_IDENTIFICACION="
                 + id + "&NOMBRE=" + nombre + "&APELLIDO=" + apellido + "&TELEFONO=" + tel +
                 "&EMAIL=" + email + "&DIRECCION=" + dir + "&USER_NAME=" + user + "&GENERO_ID=" + genero +
                 "&PASSWORD=" + pass + "&ROL=" +rol;
