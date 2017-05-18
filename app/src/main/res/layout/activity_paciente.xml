@@ -44,7 +44,7 @@
 
             <ImageButton
                 android:id="@+id/btnEditar"
-                android:layout_width="187dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:background="#12345678"
@@ -104,7 +104,7 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="match_parent"
+                android:layout_width="218dp"
                 android:layout_height="wrap_content"
                 android:text="Listado De Sedes"
                 android:textAlignment="center"
@@ -133,7 +133,7 @@
             <ImageButton
                 android:id="@+id/btnDirecciones"
                 android:layout_width="184dp"
-                android:layout_height="143dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="5dp"
                 android:background="#12345678"

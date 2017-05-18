@@ -18,16 +18,16 @@
             android:orientation="vertical">
 
             <Spinner
-                android:id="@+id/spinner6"
+                android:id="@+id/cbTipoCita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp" />
 
             <Spinner
-                android:id="@+id/spinner5"
+                android:id="@+id/cbEspecializaciones"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp" />
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -40,6 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/consulta" />
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

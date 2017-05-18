@@ -10,4 +10,18 @@
     <string name="nombre_de_usuario">Nombre de Usuario</string>
     <string name="nombre">Nombre</string>
     <string name="telefono">Telefono</string>
+
+    <string-array name="tipoCita">
+        <item>Seleccione Opcion</item>
+        <item>Prioritaria</item>
+        <item>General</item>
+        <item>Especialista</item>
+    </string-array>
+
+    <string-array name="tipoEspe">
+        <item>Seleccione Opcion</item>
+        <item>Cardiologia</item>
+        <item>Alergologia</item>
+        <item>Ginecologia</item>
+    </string-array>
 </resources>
