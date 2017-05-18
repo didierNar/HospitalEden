@@ -9,65 +9,45 @@ import android.widget.ImageView;
 
 public class PacienteActivity extends AppCompatActivity {
 
-    ImageButton imagenRegistro;
-    ImageButton imagenEditar;
-    ImageButton imagenHistorial;
-    ImageButton imagenListadoSedes;
-    ImageButton imagenDirecciones;
-
-    final Intent intentReg = new Intent(this, Consulta_registroActivity.class);
-    final Intent intentEdi = new Intent(this, Edicion_CitaActivity.class);
-    final Intent intentHisto = new Intent(this, Historial_CitasActivity.class);
-    final Intent intentList = new Intent(this, Listado_sedeActivity.class);
-    final Intent intentDirecc = new Intent(this, DireccionActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paciente);
 
-        imagenEditar = (ImageButton) findViewById(R.id.btnEditar);
-        imagenRegistro = (ImageButton) findViewById(R.id.btnConsul_registroCita);
-        imagenHistorial = (ImageButton) findViewById(R.id.btnHistorial);
-        imagenListadoSedes = (ImageButton) findViewById(R.id.btnListadoSedes);
-        imagenDirecciones = (ImageButton) findViewById(R.id.btnDirecciones);
 
-        imagenRegistro.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(intentReg);
-            }
-        });
-
-        imagenEditar.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(intentEdi);
-            }
-        });
+    }
 
 
-        imagenHistorial.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(intentHisto);
-            }
-        });
+    public void registro(View view){
+        Intent innte = new Intent(this, Consulta_registroActivity.class);
+        startActivity(innte);
+    }
 
-        imagenListadoSedes.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(intentList);
-            }
-        });
+    public void edicionCita(View view){
 
-        imagenDirecciones.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(intentDirecc);
-            }
-        });
+        Intent intentEdi = new Intent(this, Edicion_CitaActivity.class);
+        startActivity(intentEdi);
+    }
 
+    public void historialCita(View view){
+
+        Intent intentHisto = new Intent(this, Historial_CitasActivity.class);
+        startActivity(intentHisto);
+
+    }
+
+    public void listadoSedes(View view){
+
+        Intent intentList = new Intent(this, Listado_sedeActivity.class);
+        startActivity(intentList);
+
+    }
+
+    public void direccion(View view){
+
+        Intent intentDirecc = new Intent(this, DireccionActivity.class);
+        startActivity(intentDirecc);
 
     }
 

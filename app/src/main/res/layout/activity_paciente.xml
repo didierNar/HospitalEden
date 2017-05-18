@@ -15,64 +15,139 @@
         android:layout_marginTop="10dp"
         android:weightSum="1">
 
-        <ImageButton
-            android:id="@+id/btnConsul_registroCita"
-            android:layout_width="171dp"
-            android:layout_height="143dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="0.04"
-            android:background="#12345678"
-            app:srcCompat="@drawable/registro" />
+        <LinearLayout
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/btnEditar"
-            android:layout_width="171dp"
-            android:layout_height="143dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="0.04"
-            android:background="#12345678"
-            app:srcCompat="@drawable/editar" />
+            <ImageButton
+                android:id="@+id/btnConsul_registroCita"
+                android:layout_width="172dp"
+                android:layout_height="128dp"
+                android:layout_marginLeft="10dp"
+                android:background="#12345678"
+                android:onClick="registro"
+                app:srcCompat="@drawable/registro" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de Citas"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnEditar"
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#12345678"
+                android:onClick="edicionCita"
+                app:srcCompat="@drawable/editar" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edicion de Citas"
+                android:textAlignment="center" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="153dp"
-        android:orientation="horizontal">
+        android:layout_height="153dp">
 
-        <ImageButton
-            android:id="@+id/btnHistorial"
-            android:layout_width="171dp"
-            android:layout_height="143dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="0.00"
-            android:background="#12345678"
-            app:srcCompat="@drawable/historial" />
+        <LinearLayout
+            android:layout_width="182dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/btnListadoSedes"
-            android:layout_width="171dp"
-            android:layout_height="143dp"
-            android:layout_marginLeft="10dp"
+            <ImageButton
+                android:id="@+id/btnHistorial"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#12345678"
+                android:onClick="historialCita"
+                app:srcCompat="@drawable/historial" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Historial Citas"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnListadoSedes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#12345678"
+                android:onClick="listadoSedes"
+                app:srcCompat="@drawable/listado" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Listado De Sedes"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="0.00"
-            android:background="#12345678"
-            app:srcCompat="@drawable/listado" />
+            android:text="TextView" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="172dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/btnDirecciones"
-            android:layout_width="171dp"
-            android:layout_height="143dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="0.00"
-            android:background="#12345678"
-            app:srcCompat="@drawable/direcciones" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnDirecciones"
+                android:layout_width="184dp"
+                android:layout_height="143dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                android:background="#12345678"
+                android:onClick="direccion"
+                app:srcCompat="@drawable/direcciones" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mapa de Sedes"
+                android:textAlignment="center" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
