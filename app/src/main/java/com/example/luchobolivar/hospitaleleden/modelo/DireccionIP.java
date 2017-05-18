@@ -8,6 +8,7 @@ public class DireccionIP {
 
     private static String ip;
 
+
     public static String getIp() {
         return "192.168.19.2";
     }
