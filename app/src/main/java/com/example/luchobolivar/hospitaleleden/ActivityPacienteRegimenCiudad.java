@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
@@ -26,12 +28,17 @@ import java.util.List;
 public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
 
     private String[] tiposReporte = {"Usuario por regimen", "Usuarios por ciudad"};
+    private String[] tiposRegimen = {"Regimen subsidiado", "Regimen contributivo"};
+
     private List<Ciudad> ciudades;
     private List<Departamento> departamentos;
+
+    private ListView listaUsuariosReporte;
 
     private Spinner spTipoReporte;
     private Spinner spCiudades;
     private Spinner spDepartamentos;
+    private Spinner spRegimenReporte;
 
     private String enlaceDeptos;
     private String enlaceCiudades;
@@ -50,15 +57,22 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
         spTipoReporte = (Spinner) findViewById(R.id.spTipoReporte);
         spCiudades = (Spinner) findViewById(R.id.spCiudades);
         spDepartamentos = (Spinner) findViewById(R.id.spDepartamentos);
+        spRegimenReporte = (Spinner) findViewById(R.id.spRegimenReporte);
+
+        listaUsuariosReporte = (ListView) findViewById(R.id.listaUsuariosReporte);
 
         ciudades = new ArrayList<Ciudad>();
         departamentos = new ArrayList<Departamento>();
 
         spCiudades.setVisibility(View.INVISIBLE);
         spDepartamentos.setVisibility(View.INVISIBLE);
+        spRegimenReporte.setVisibility(View.INVISIBLE);
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, tiposReporte);
         spTipoReporte.setAdapter(adaptador);
+
+        ArrayAdapter<String> adaptadorRegimen = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, tiposRegimen);
+        spRegimenReporte.setAdapter(adaptadorRegimen);
 
         spTipoReporte.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -66,9 +80,11 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
                 if (spTipoReporte.getSelectedItemPosition() == 1) {
                     llenarDeptos();
                     spDepartamentos.setVisibility(View.VISIBLE);
+                    spRegimenReporte.setVisibility(View.INVISIBLE);
                 } else {
                     spCiudades.setVisibility(View.INVISIBLE);
                     spDepartamentos.setVisibility(View.INVISIBLE);
+                    spRegimenReporte.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -83,7 +99,8 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 spCiudades.setVisibility(View.VISIBLE);
-                llenarCiudades(position+1);
+                Departamento d = (Departamento) spDepartamentos.getSelectedItem();
+                llenarCiudades(d.getId());
             }
 
             @Override
@@ -96,11 +113,13 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
     }
 
     private void llenarDeptos() {
+        departamentos = new ArrayList<Departamento>();
         enlaceDeptos = "http://" + ip + "/serviciosWebHospital/ListarDeptos.php?PAIS_ID=1";
         new listarDeptos().execute(enlaceDeptos);
     }
 
     private void llenarCiudades(int codDepto){
+        ciudades = new ArrayList<Ciudad>();
         enlaceCiudades = "http://"+ip+"/serviciosWebHospital/ListarCiudades.php?DEPARTAMENTO_ID="+codDepto;
         new listarCiudades().execute(enlaceCiudades);
     }
@@ -149,6 +168,7 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
                 spCiudades.setAdapter(spinnerArrayAdapter);
             } else {
                 Toast.makeText(getApplicationContext(), "No hay ciudades registrados", Toast.LENGTH_SHORT).show();
+                spCiudades.setVisibility(View.INVISIBLE);
             }
         }
 
@@ -168,7 +188,7 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
             if (json.length() > 0) {
                 resultado = 1;
                 for (int i = 0; i < json.length(); i++) {
-                    JSONObject row = json.getJSONObject(0);
+                    JSONObject row = json.getJSONObject(i);
 
                     int id = row.getInt("ID");
                     String desc = row.getString("DESCRIPCION");
@@ -194,7 +214,7 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
             if (json.length() > 0) {
                 resultado = 1;
                 for (int i = 0; i < json.length(); i++) {
-                    JSONObject row = json.getJSONObject(0);
+                    JSONObject row = json.getJSONObject(i);
 
                     int id = row.getInt("ID");
                     String desc = row.getString("DESCRIPCION");

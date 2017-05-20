@@ -72,16 +72,11 @@
 
     </LinearLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04" />
 
-    <TextView
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvUsuarioPor"
-        android:layout_weight="0.04" />
+        android:id="@+id/spRegimenReporte" />
 
     <Space
         android:layout_width="match_parent"
