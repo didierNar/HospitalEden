@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AdministradorActivity extends AppCompatActivity {
@@ -22,7 +21,7 @@ public class AdministradorActivity extends AppCompatActivity {
     }
 
     public void abrirEditarAdmin (View v){
-        Intent i = new Intent(this, EditarAdminActivity.class);
+        Intent i = new Intent(this, GestionarAdminActivity.class);
         startActivity(i);
     }
 

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.luchobolivar.hospitaleleden.RegistroActivity"
     android:orientation="vertical"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,13 +16,18 @@
         android:textSize="18sp"
         android:textAlignment="center" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="31dp">
 
         <TextView
-            android:text="Editar"
+            android:text="Gestionar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
@@ -43,7 +49,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="135dp">
+        android:layout_height="89dp">
 
         <ImageView
             android:layout_width="wrap_content"

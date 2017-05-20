@@ -143,11 +143,20 @@
                 tools:ignore="HardcodedText" />
 
             <Button
+                android:id="@+id/btEliminarAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="eliminar"
+                android:onClick="eliminarAdmin"
+                android:layout_marginBottom="5dp"
+                tools:ignore="HardcodedText" />
+
+            <Button
                 android:id="@+id/btnVolverInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/inicio"
-                android:onClick="volverInicio"
+                android:text="@string/regresar"
+                android:onClick="regresar"
                 android:layout_marginBottom="10dp"/>
 
         </LinearLayout>

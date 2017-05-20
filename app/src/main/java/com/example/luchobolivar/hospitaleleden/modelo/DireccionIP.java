@@ -9,7 +9,7 @@ public class DireccionIP {
     private static String ip;
 
     public static String getIp() {
-        return "192.168.26.155:8888";
+        return "192.168.0.18";
     }
 
     public static void setIp(String ip) {
