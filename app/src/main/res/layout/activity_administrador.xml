@@ -9,6 +9,11 @@
     android:background="@drawable/background"
     android:weightSum="1">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +46,7 @@
             android:id="@+id/textView3"
             android:layout_weight="1"
             android:text="Buscar Usuarios"
+            android:onClick="abrirAdminBuscarUsu"
             android:textSize="18sp"
             android:textAlignment="center" />
 
@@ -64,7 +70,36 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/consulta"
             android:id="@+id/imgVBuscarUserAdmin"
+            android:onClick="abrirAdminBuscarUsu"
             android:layout_weight="1" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="31dp">
+        <TextView
+            android:text="No se"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewlis"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_weight="1"
+            android:text="No se"
+            android:textSize="18sp"
+            android:textAlignment="center" />
     </LinearLayout>
 
 </LinearLayout>

@@ -25,4 +25,9 @@ public class AdministradorActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void abrirAdminBuscarUsu (View v){
+        Intent i = new Intent(this, ActivityPacienteRegimenCiudad.class);
+        startActivity(i);
+    }
+
 }
