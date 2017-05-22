@@ -12,8 +12,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04" />
+        android:layout_height="20dp" />
 
     <TextView
         android:text="Consultas atendidad por el médico"
@@ -26,14 +25,12 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+        android:layout_height="23dp" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:layout_weight="0.02">
+        android:layout_height="54dp">
 
         <TextView
             android:text="Seleccione el médico"
@@ -44,15 +41,14 @@
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="42dp"
             android:id="@+id/spEspecialistas" />
 
     </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.08" />
+        android:layout_height="14dp" />
 
     <ListView
         android:layout_width="match_parent"
