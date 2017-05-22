@@ -30,4 +30,14 @@ public class AdministradorActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void abrirGestionEspecializacion (View v){
+        Intent i = new Intent(this, GestionEspecializacion.class);
+        startActivity(i);
+    }
+
+    public void abrirConsultasAtendidas (View v){
+        Intent i = new Intent(this, ActivityConsultasAtendidas.class);
+        startActivity(i);
+    }
+
 }

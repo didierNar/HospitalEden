@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
+import com.example.luchobolivar.hospitaleleden.adapter.AdaptadorUsuario;
 import com.example.luchobolivar.hospitaleleden.modelo.Ciudad;
 import com.example.luchobolivar.hospitaleleden.modelo.Departamento;
 import com.example.luchobolivar.hospitaleleden.modelo.DireccionIP;
@@ -27,7 +28,7 @@ import java.util.List;
 
 public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
 
-    private String[] tiposReporte = {"Usuario por regimen", "Usuarios por ciudad"};
+    private String[] tiposReporte = {"Usuarios por regimen", "Usuarios por ciudad"};
     private String[] tiposRegimen = {"Regimen subsidiado", "Regimen contributivo"};
 
     private List<Ciudad> ciudades;
@@ -42,9 +43,13 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
 
     private String enlaceDeptos;
     private String enlaceCiudades;
+    private String enlaceReporteRegimen;
+    private String enlaceReporteCiudad;
+
     private String ip;
 
     private HttpConnection connection;
+    private ArrayList<Usuario> usuariosReporte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +58,14 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
 
         ip = DireccionIP.getIp();
         connection = new HttpConnection();
+        usuariosReporte = new ArrayList<Usuario>();
 
         spTipoReporte = (Spinner) findViewById(R.id.spTipoReporte);
         spCiudades = (Spinner) findViewById(R.id.spCiudades);
         spDepartamentos = (Spinner) findViewById(R.id.spDepartamentos);
         spRegimenReporte = (Spinner) findViewById(R.id.spRegimenReporte);
 
-        listaUsuariosReporte = (ListView) findViewById(R.id.listaUsuariosReporte);
+        listaUsuariosReporte = (ListView) findViewById(R.id.lvReporte);
 
         ciudades = new ArrayList<Ciudad>();
         departamentos = new ArrayList<Departamento>();
@@ -110,6 +116,24 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
 
         });
 
+    }
+
+    public void generarReporte(View v){
+        if (spTipoReporte.getSelectedItemPosition() == 1){
+            Ciudad ciu = (Ciudad) spCiudades.getSelectedItem();
+            enlaceReporteCiudad = "http://"+ip+"/serviciosWebHospital/PacientesPorCiudad.php?ID="+ciu.getId();
+            new reporteCiudad().execute(enlaceReporteCiudad);
+        } else {
+            int tipoReg = spRegimenReporte.getSelectedItemPosition();
+            String regimen = "";
+            if(tipoReg == 0){
+                regimen = "Subsidiado";
+            } else {
+                regimen = "Contributivo";
+            }
+            enlaceReporteRegimen = "http://"+ip+"/serviciosWebHospital/PacientesRegimen.php?DESCRIPCION="+regimen;
+            new reporteRegimen().execute(enlaceReporteRegimen);
+        }
     }
 
     private void llenarDeptos() {
@@ -222,6 +246,95 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
 
                     Ciudad c = new Ciudad(id, desc, depto);
                     ciudades.add(c);
+                }
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+    class reporteCiudad extends AsyncTask<String, Float, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(String resultado) {
+            super.onPostExecute(resultado);
+            int r = obtenerDatosJSONReporte(resultado);
+            if (r > 0) {
+                AdaptadorUsuario adapter = new AdaptadorUsuario(ActivityPacienteRegimenCiudad.this, usuariosReporte);
+                listaUsuariosReporte.setAdapter(adapter);
+            } else {
+                Toast.makeText(getApplicationContext(), "No hay usuarios de esta ciudad", Toast.LENGTH_SHORT).show();
+                spCiudades.setVisibility(View.INVISIBLE);
+            }
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            String resultado = connection.enviarDatosGet(enlaceReporteCiudad);
+            return resultado;
+        }
+    }
+
+    class reporteRegimen extends AsyncTask<String, Float, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(String resultado) {
+            super.onPostExecute(resultado);
+            int r = obtenerDatosJSONReporte(resultado);
+            if (r > 0) {
+                AdaptadorUsuario adapter = new AdaptadorUsuario(ActivityPacienteRegimenCiudad.this, usuariosReporte);
+                listaUsuariosReporte.setAdapter(adapter);
+            } else {
+                Toast.makeText(getApplicationContext(), "No hay usuarios con este regimen", Toast.LENGTH_SHORT).show();
+                spCiudades.setVisibility(View.INVISIBLE);
+            }
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            String resultado = connection.enviarDatosGet(enlaceReporteRegimen);
+            return resultado;
+        }
+    }
+
+    public int obtenerDatosJSONReporte(String respuesta) {
+        Log.e("Respuesta", respuesta);
+        int resultado = 0;
+        try {
+            JSONArray json = new JSONArray(respuesta);
+            //Verficamos que el tamaño del json sea mayor que 0
+            if (json.length() > 0) {
+                resultado = 1;
+                usuariosReporte.clear();
+                for (int i = 0; i < json.length(); i++) {
+
+                    JSONObject row = json.getJSONObject(i);
+
+                    int id = row.getInt("NUMERO_IDENTIFICACION");
+                    String nom = row.getString("NOMBRE");
+                    String ape = row.getString("APELLIDO");
+                    String tel = row.getString("TELEFONO");
+                    String email = row.getString("EMAIL");
+                    String dir = row.getString("DIRECCION");
+                    String user = row.getString("USER_NAME");
+                    int genero = row.getInt("GENERO_ID");
+                    String pass = row.getString("PASSWORD");
+                    String rol = row.getString("ROL");
+
+                    Usuario us = new Usuario(id, nom, ape, tel, email, dir, genero, user, pass, rol);
+                    usuariosReporte.add(us);
                 }
             }
 

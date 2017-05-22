@@ -44,64 +44,68 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="58dp">
+        android:layout_height="124dp">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="278dp"
+            android:layout_height="135dp"
+            android:weightSum="1">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spTipoReporte" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.16" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spRegimenReporte"
+                android:layout_weight="0.20" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spDepartamentos"
+                android:layout_weight="0.16" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="19dp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spCiudades"
+                android:layout_weight="0.16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:weightSum="1">
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.36" />
+                android:layout_weight="0.46" />
 
-            <Spinner
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/spTipoReporte" />
+                android:layout_height="57dp"
+                app:srcCompat="@drawable/consulta"
+                android:id="@+id/imgVGenerarReporte"
+                android:onClick="generarReporte" />
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            app:srcCompat="@drawable/consulta"
-            android:id="@+id/imgVGenerarReporte"
-            android:layout_weight="1" />
-
     </LinearLayout>
-
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spRegimenReporte" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spDepartamentos" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spCiudades" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -116,7 +120,8 @@
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/listaUsuariosReporte" />
+                android:id="@+id/lvReporte" />
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

@@ -28,7 +28,9 @@
         <activity android:name=".Listado_sedeActivity" />
         <activity android:name=".DireccionActivity" />
         <activity android:name=".GestionarAdminActivity" />
-        <activity android:name=".ActivityPacienteRegimenCiudad"></activity>
+        <activity android:name=".ActivityPacienteRegimenCiudad" />
+        <activity android:name=".ActivityConsultasAtendidas" />
+        <activity android:name=".GestionEspecializacion"></activity>
     </application>
 
 </manifest>
