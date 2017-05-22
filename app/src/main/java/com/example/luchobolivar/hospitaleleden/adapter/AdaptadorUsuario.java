@@ -61,7 +61,7 @@ public class AdaptadorUsuario extends BaseAdapter {
         id.setText(usuario.getIdentificacion()+"");
 
         TextView nombre = (TextView) v.findViewById(R.id.tvNombreUser);
-        nombre.setText(usuario.getNombre() +" "+ usuario.getApellido());
+        nombre.setText(usuario.getNombre());
 
         TextView tel = (TextView) v.findViewById(R.id.tvTelefono);
         tel.setText(usuario.getTelefono());

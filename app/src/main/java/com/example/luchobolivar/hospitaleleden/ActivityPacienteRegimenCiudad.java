@@ -167,7 +167,6 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No hay departamentos registrados", Toast.LENGTH_SHORT).show();
             }
         }
-
         @Override
         protected String doInBackground(String... strings) {
             String resultado = connection.enviarDatosGet(enlaceDeptos);
