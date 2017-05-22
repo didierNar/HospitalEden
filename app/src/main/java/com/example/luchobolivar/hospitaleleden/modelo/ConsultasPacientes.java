@@ -39,4 +39,9 @@ public class ConsultasPacientes {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return  "Paciente " + nombre + " " + apellido + ", Valor= " + valor;
+    }
 }

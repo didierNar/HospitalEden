@@ -12,8 +12,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
-import com.example.luchobolivar.hospitaleleden.adapter.AdaptadorUsuario;
-import com.example.luchobolivar.hospitaleleden.adapter.AdaptadorUsuarioAtendido;
 import com.example.luchobolivar.hospitaleleden.modelo.ConsultasPacientes;
 import com.example.luchobolivar.hospitaleleden.modelo.DireccionIP;
 import com.example.luchobolivar.hospitaleleden.modelo.PersonalMedico;
@@ -219,8 +217,9 @@ public class ActivityConsultasAtendidas extends AppCompatActivity {
             super.onPostExecute(resultado);
             int res = obtenerDatosJSONConsultas(resultado);
             if (res == 1) {
-                AdaptadorUsuarioAtendido adapter = new AdaptadorUsuarioAtendido(ActivityConsultasAtendidas.this, datosConsulta);
-                lvPacientes.setAdapter(adapter);
+                ArrayAdapter<ConsultasPacientes> adaptador = new ArrayAdapter<ConsultasPacientes>(getApplicationContext(),
+                        R.layout.support_simple_spinner_dropdown_item, datosConsulta);
+                lvPacientes.setAdapter(adaptador);
             } else {
                 Toast.makeText(getApplicationContext(), "No hay pacientes consultados por este médico", Toast.LENGTH_SHORT).show();
             }

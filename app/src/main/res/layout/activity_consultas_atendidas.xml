@@ -30,9 +30,10 @@
         android:layout_weight="0.06" />
 
     <LinearLayout
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="41dp"
+        android:layout_height="51dp"
         android:layout_weight="0.02">
 
         <TextView
