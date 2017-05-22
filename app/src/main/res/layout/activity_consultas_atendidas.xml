@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.luchobolivar.hospitaleleden.RegistroActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:weightSum="1">
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04" />
+
+    <TextView
+        android:text="Consultas atendidad por el médico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:layout_weight="0.04"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_weight="0.02">
+
+        <TextView
+            android:text="Seleccione el médico"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/spEspecialistas" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.08" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="515dp"
+        android:id="@+id/lvCitasAtendidas" />
+
+
+</LinearLayout>

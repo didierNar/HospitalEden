@@ -32,11 +32,11 @@
         android:layout_height="31dp">
 
         <TextView
-            android:text="Gestionar"
+            android:text="Editar Datos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
-            android:layout_weight="1"
+            android:layout_weight="1.90"
             android:textSize="18sp"
             android:textAlignment="center" />
 
@@ -55,7 +55,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="89dp">
+        android:layout_height="66dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -76,19 +76,19 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06" />
+        android:layout_height="24dp" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="31dp">
+        android:layout_height="31dp"
+        android:layout_weight="0.06">
         <TextView
-            android:text="No se"
+            android:text="Gestionar especializaciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewlis"
-            android:layout_weight="1"
+            android:layout_weight="0.33"
             android:textSize="18sp"
             android:textAlignment="center" />
 
@@ -97,9 +97,32 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
             android:layout_weight="1"
-            android:text="No se"
+            android:text="Ver consultas atendidas"
             android:textSize="18sp"
             android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="66dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/editarr"
+            android:id="@+id/imageView2"
+            android:onClick="abrirGestionEspecializacion"
+            android:layout_weight="3.13" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/historial"
+            android:id="@+id/imageView3"
+            android:onClick="abrirConsultasAtendidas"
+            android:layout_weight="1" />
+
     </LinearLayout>
 
 </LinearLayout>
