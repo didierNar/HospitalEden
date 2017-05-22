@@ -113,7 +113,7 @@ public class GestionEspecializacion extends AppCompatActivity {
         }else{
 
             int codigo =  Integer.parseInt(etCodigo.getText().toString());
-            enlaceBusqueda = "http://"+ip+"/serviciosWebHospital/buscarEspecializacion.php?codigo="+codigo;
+            enlaceBusqueda = "http://"+ip+"/serviciosWebHospital/buscarEspecializacion.php?ID="+codigo;
             new busacarPersonalMedico().execute(enlaceBusqueda);
 
         }
@@ -148,16 +148,14 @@ public class GestionEspecializacion extends AppCompatActivity {
         Log.e("Respuesta", respuesta);
         int resultado = 0;
         try {
-            JSONObject json = new JSONObject(respuesta);
-            //Log.e("Tamaño ", json.getString("registro")+"");
-            String res = json.getString("encontrado");
+            JSONArray json = new JSONArray(respuesta);
             //Verficamos que el tamaño del json sea mayor que 0
-            if (res.equals("ENCONTRADO")) {
+            if (json.length()>0) {
                 resultado = 1;
-                JSONArray jsonDatos = json.getJSONArray(respuesta);
-                JSONObject row = jsonDatos.getJSONObject(0);
 
-                etCodigo.setText(row.getInt("ID"));
+                JSONObject row = json.getJSONObject(0);
+
+                etCodigo.setText(row.getInt("ID")+"");
                 etespecializacion.setText(row.getString("DESCRIPCION"));
 
             }
@@ -231,7 +229,7 @@ public class GestionEspecializacion extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "realice una busqueda primero", Toast.LENGTH_SHORT).show();
         } else {
             int codigo =  Integer.parseInt(etCodigo.getText().toString());
-            enlaceEliminar =  "http://" + ip + "/serviciosWebHospital/eliminarEspecializacion.php?codigo="+codigo;
+            enlaceEliminar =  "http://" + ip + "/serviciosWebHospital/eliminarEspecializacion.php?ID="+codigo;
             new eliminar().execute(enlaceEliminar);
         }
 
