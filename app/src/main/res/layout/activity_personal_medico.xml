@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,18 +8,225 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etNombreUsuario"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Personal"
-        android:inputType="textPersonName"
-        android:textSize="25dp"
-        android:gravity="center_vertical"
-        android:drawablePadding="10dp"
-        android:padding="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="wrap_content" />
 
-</LinearLayout>
+    <ImageButton
+        android:layout_width="108dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/consulta"
+        android:id="@+id/btBuscarPer"
+        android:layout_y="3dp"
+        android:layout_x="262dp"
+        android:onClick="buscarPersonal"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_x="-3dp"
+        android:layout_y="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/etIdentificacionPer"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Identificacion"/>
+
+            <EditText
+                android:id="@+id/etNombrePer"
+                android:layout_width="344dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Nombre"/>
+
+            <EditText
+                android:id="@+id/etApellidoPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Apellido"/>
+
+            <EditText
+                android:id="@+id/etDireccionPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Direccion"/>
+
+            <EditText
+                android:id="@+id/etTelefonoPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Telefono"/>
+
+            <EditText
+                android:id="@+id/celularPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Celular"/>
+
+            <EditText
+                android:id="@+id/etEmailPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="E-Mail"/>
+
+            <EditText
+                android:id="@+id/etUsernamePer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Nombre de Usuario"/>
+
+            <EditText
+                android:id="@+id/etPasswordPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textSize="25dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:hint="Contraseña"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spgenero" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spTipoPersonal" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spEspecializacion" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/back"
+                    android:id="@+id/Volver"
+                    android:layout_marginEnd="37dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="volverInicioPer"/>
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/save"
+                    android:id="@+id/btRegistrarPer"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/btEliminar"
+                    android:onClick="agregarPersonalMedico"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/editarr"
+                    android:id="@+id/btEditarPer"
+                    android:onClick="editarPersonal"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/Volver" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/borrar"
+                    android:id="@+id/btEliminar"
+                    android:onClick="eliminarPersonal"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/btEditarPer" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</AbsoluteLayout>
