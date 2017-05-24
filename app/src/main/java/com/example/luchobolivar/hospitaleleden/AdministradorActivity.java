@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.luchobolivar.hospitaleleden.modelo.PersonalMedico;
+
 public class AdministradorActivity extends AppCompatActivity {
 
     private TextView user;
@@ -47,6 +49,11 @@ public class AdministradorActivity extends AppCompatActivity {
 
     public void abrirGestionSedes (View v){
         Intent i = new Intent(this, ActivityGestionSede.class);
+        startActivity(i);
+    }
+
+    public void abrirRegistroPersonal(View v){
+        Intent i = new Intent(this, PersonalMedicoActivity.class);
         startActivity(i);
     }
 

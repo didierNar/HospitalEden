@@ -32,7 +32,7 @@
         <activity android:name=".ActivityConsultasAtendidas" />
         <activity android:name=".GestionEspecializacion" />
         <activity android:name=".ActivityRegistroSede" />
-        <activity android:name=".ActivityGestionSede"></activity>
+        <activity android:name=".ActivityGestionSede" />
     </application>
 
 </manifest>
