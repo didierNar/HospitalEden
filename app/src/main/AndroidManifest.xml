@@ -30,7 +30,9 @@
         <activity android:name=".GestionarAdminActivity" />
         <activity android:name=".ActivityPacienteRegimenCiudad" />
         <activity android:name=".ActivityConsultasAtendidas" />
-        <activity android:name=".GestionEspecializacion"></activity>
+        <activity android:name=".GestionEspecializacion" />
+        <activity android:name=".ActivityRegistroSede" />
+        <activity android:name=".ActivityGestionSede"></activity>
     </application>
 
 </manifest>

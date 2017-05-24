@@ -40,4 +40,14 @@ public class AdministradorActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void abrirRegistroSedes (View v){
+        Intent i = new Intent(this, ActivityRegistroSede.class);
+        startActivity(i);
+    }
+
+    public void abrirGestionSedes (View v){
+        Intent i = new Intent(this, ActivityGestionSede.class);
+        startActivity(i);
+    }
+
 }
