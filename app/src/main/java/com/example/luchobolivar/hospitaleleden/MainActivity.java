@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (user.getRol().equals("paciente")){
 
+            UsuarioLogueado.setUsuario(user);
             Intent i = new Intent(getApplicationContext(), PacienteActivity.class);
             i.putExtra("usuario", usuario);
             i.putExtra("password", password);
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (user.getRol().equals("personalMedico")){
 
+            UsuarioLogueado.setUsuario(user);
             Intent i = new Intent(getApplicationContext(), PersonalMedicoActivity.class);
             i.putExtra("usuario", usuario);
             i.putExtra("password", password);

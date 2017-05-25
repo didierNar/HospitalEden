@@ -6,10 +6,9 @@ package com.example.luchobolivar.hospitaleleden.modelo;
 
 public class UsuarioLogueado {
 
-    private static Usuario usuario;
+    static Usuario usuario;
 
     public UsuarioLogueado() {
-        usuario = null;
     }
 
     public static Usuario getUsuario() {
