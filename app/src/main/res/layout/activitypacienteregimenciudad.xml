@@ -12,8 +12,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04" />
+        android:layout_height="12dp" />
 
     <TextView
         android:text="Generar reporte de usuarios"
@@ -25,8 +24,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.08" />
+        android:layout_height="13dp" />
 
     <TextView
         android:text="Seleccione el reporte que desea generar"
@@ -38,13 +36,12 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04" />
+        android:layout_height="11dp" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="124dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="vertical"
@@ -108,6 +105,7 @@
     </LinearLayout>
 
     <ScrollView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="336dp">
 

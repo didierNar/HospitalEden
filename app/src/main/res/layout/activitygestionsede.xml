@@ -151,37 +151,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="13dp" />
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    app:srcCompat="@drawable/editar"
-                    android:id="@+id/btnEditarSede"
-                    android:onClick="editarSede" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.04"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/btnRegresarSede"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:onClick="regresarAdmin"
+                        app:srcCompat="@drawable/back" />
+
+                    <ImageView
+                        android:id="@+id/btnEditarSede"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:onClick="editarSede"
+                        app:srcCompat="@drawable/editar" />
+
+                    <ImageView
+                        android:id="@+id/btnEliminarSede"
+                        android:layout_width="126dp"
+                        android:layout_height="30dp"
+                        android:onClick="eliminarSede"
+                        app:srcCompat="@drawable/borrar" />
+
+                </LinearLayout>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.04" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    app:srcCompat="@drawable/borrar"
-                    android:onClick="eliminarSede"
-                    android:id="@+id/btnEliminarSede"
-                    android:layout_weight="0.04" />
-
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.04" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    app:srcCompat="@drawable/back"
-                    android:id="@+id/btnRegresarSede"
-                    android:onClick="regresarAdmin" />
 
             </LinearLayout>
         </LinearLayout>
