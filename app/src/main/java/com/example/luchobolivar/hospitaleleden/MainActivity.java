@@ -68,12 +68,14 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (user.getRol().equals("paciente")){
 
+            UsuarioLogueado.setUsuario(user);
             Intent i = new Intent(getApplicationContext(), PacienteActivity.class);
             UsuarioLogueado.setUsuario(user);
             startActivity(i);
 
         } else if (user.getRol().equals("personalMedico")){
 
+            UsuarioLogueado.setUsuario(user);
             Intent i = new Intent(getApplicationContext(), PersonalMedicoActivity.class);
             UsuarioLogueado.setUsuario(user);
             startActivity(i);
