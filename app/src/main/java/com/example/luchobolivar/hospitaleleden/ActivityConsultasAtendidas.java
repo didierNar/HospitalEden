@@ -220,6 +220,7 @@ public class ActivityConsultasAtendidas extends AppCompatActivity {
                 ArrayAdapter<ConsultasPacientes> adaptador = new ArrayAdapter<ConsultasPacientes>(getApplicationContext(),
                         R.layout.support_simple_spinner_dropdown_item, datosConsulta);
                 lvPacientes.setAdapter(adaptador);
+
             } else {
                 Toast.makeText(getApplicationContext(), "No hay pacientes consultados por este médico", Toast.LENGTH_SHORT).show();
             }
