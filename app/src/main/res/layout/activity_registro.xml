@@ -161,28 +161,28 @@
                 android:id="@+id/spRegimen" />
 
             <Button
-                android:text="Button"
+                android:text="registrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btRegistrar"
                 android:onClick="registrar"/>
 
             <Button
-                android:text="Button"
+                android:text="buscar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnBuscar"
                 android:onClick="buscarPaciente"/>
 
             <Button
-                android:text="Button"
+                android:text="editar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnEditar"
                 android:onClick="editarPaciente"/>
 
             <Button
-                android:text="Button"
+                android:text="inicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/Inicio"

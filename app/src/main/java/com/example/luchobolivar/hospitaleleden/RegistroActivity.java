@@ -286,7 +286,7 @@ public class RegistroActivity extends AppCompatActivity {
             }else if(posicion ==2){
                 regimenPaciente = 2;
             }
-            enlaceEditarPaciente = "http://" + ip + "/editarPaciente.php?NUMERO_IDENTIFICACION="+id+"&EPS="+eps+"&REGIMEN="+regimenPaciente;
+            enlaceEditarPaciente = "http://" + ip + "/serviciosWebHospital/editarPaciente.php?NUMERO_IDENTIFICACION="+id+"&EPS="+eps+"&REGIMEN="+regimenPaciente;
 
             new editarUsuario().execute(enlaceEditarUsu);
             new editarPaciente().execute(enlaceEditarPaciente);
@@ -314,7 +314,7 @@ public class RegistroActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            String resultado = connection.enviarDatosGet(enlace);
+            String resultado = connection.enviarDatosGet(enlaceEditarUsu);
             return resultado;
         }
     }
@@ -357,7 +357,7 @@ public class RegistroActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            String resultado = connection.enviarDatosGet(enlace);
+            String resultado = connection.enviarDatosGet(enlaceEditarPaciente);
             return resultado;
         }
     }
@@ -386,7 +386,7 @@ public class RegistroActivity extends AppCompatActivity {
         if (etIdentificacion.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "ingrese un numero de identificacion", Toast.LENGTH_SHORT).show();
         } else {
-            enlaceBuscarPaciente = "http://" + ip + "/buscarPaciente.php?numero_identificacion="+etIdentificacion.getText().toString();
+            enlaceBuscarPaciente = "http://" + ip + "/serviciosWebHospital/buscarPaciente.php?numero_identificacion="+etIdentificacion.getText().toString();
             new busacarPaciente().execute(enlaceBuscarPaciente);
         }
 
@@ -421,7 +421,7 @@ public class RegistroActivity extends AppCompatActivity {
         Log.e("Respuesta", respuesta);
         int resultado = 0;
         try {
-            JSONArray json= new JSONArray();
+            JSONArray json= new JSONArray(respuesta);
             //Verficamos que el tamaño del json sea mayor que 0
             if (json.length()>0) {
                 resultado = 1;
@@ -430,7 +430,7 @@ public class RegistroActivity extends AppCompatActivity {
                 etNombre.setText(row.getString("NOMBRE"));
                 etApellido.setText(row.getString("APELLIDO"));
                 etTel.setText(row.getString("TELEFONO"));
-                etIdentificacion.setText(row.getInt("NUMERO_IDENTIFICACION"));
+                etIdentificacion.setText(row.getInt("USUARIO_NUMERO_IDENTIFICACION")+"");
                 etEmail.setText(row.getString("EMAIL"));
                 etDireccion.setText(row.getString("DIRECCION"));
                 etUsername.setText(row.getString("USER_NAME"));
