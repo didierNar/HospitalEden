@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Historial_CitasActivity extends AppCompatActivity {
+public class HistorialCitasActivity extends AppCompatActivity {
 
     private Spinner citas;
     private Spinner tipoCitaHisto;
@@ -40,7 +40,7 @@ public class Historial_CitasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityhistorialcitas);
+        setContentView(R.layout.activity_historial_citas);
 
         citas = (Spinner) findViewById(R.id.cbCitasHisto);
         tipoCitaHisto = (Spinner) findViewById(R.id.cbTipoCitaHisto);

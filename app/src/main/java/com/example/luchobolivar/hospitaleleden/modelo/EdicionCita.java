@@ -10,7 +10,7 @@ public class EdicionCita extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityedicioncita);
+        setContentView(R.layout.activity_edicion_cita);
 
 
     }

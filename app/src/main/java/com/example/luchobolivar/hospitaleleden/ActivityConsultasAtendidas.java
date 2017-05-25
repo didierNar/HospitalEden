@@ -44,7 +44,7 @@ public class ActivityConsultasAtendidas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityconsultasatendidas);
+        setContentView(R.layout.activity_consultas_atendidas);
 
         spEspecialistas = (Spinner) findViewById(R.id.spEspecialistas);
         lvPacientes = (ListView) findViewById(R.id.lvCitasAtendidas);

@@ -51,7 +51,7 @@ public class RegistroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityregistro);
+        setContentView(R.layout.activity_registro);
 
         connection = new HttpConnection();
         etNombre = (EditText) findViewById(R.id.etNombre);

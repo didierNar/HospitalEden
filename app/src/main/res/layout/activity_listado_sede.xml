@@ -6,16 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context="com.example.luchobolivar.hospitaleleden.Listado_sedeActivity">
-
-    <TextView
-        android:id="@+id/Lista de Sedes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="0.00"
-        android:text="Listado de Sedes"
-        android:textAlignment="center" />
+    tools:context="com.example.luchobolivar.hospitaleleden.ListadosedeActivity">
 
     <Spinner
         android:id="@+id/cbCiudades"

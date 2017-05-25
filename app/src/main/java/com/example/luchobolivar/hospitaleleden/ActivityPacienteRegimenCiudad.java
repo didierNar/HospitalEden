@@ -53,7 +53,7 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitypacienteregimenciudad);
+        setContentView(R.layout.activity_paciente_regimen_ciudad);
 
         ip = DireccionIP.getIp();
         connection = new HttpConnection();

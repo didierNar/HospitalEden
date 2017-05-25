@@ -13,7 +13,7 @@ public class AdministradorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityadministrador);
+        setContentView(R.layout.activity_administrador);
 
         user = (TextView) findViewById(R.id.tvUsuario);
         user.setText("Bienvenido Administrador");

@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Listado_CitasActivity extends ListActivity{
+public class ListadoCitasActivity extends ListActivity{
 
 
     private ListView citasView;

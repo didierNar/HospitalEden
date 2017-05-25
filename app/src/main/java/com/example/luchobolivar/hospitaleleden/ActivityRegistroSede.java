@@ -45,7 +45,7 @@ public class ActivityRegistroSede extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityregistrosede);
+        setContentView(R.layout.activity_registro_sede);
 
         ip = DireccionIP.getIp();
         connection = new HttpConnection();
