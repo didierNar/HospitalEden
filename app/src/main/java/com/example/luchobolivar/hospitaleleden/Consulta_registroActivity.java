@@ -113,6 +113,7 @@ public class Consulta_registroActivity extends AppCompatActivity {
                             numId = 0;
                             numId = datosMedicosGenerales.get(i).getNumIdentificacion();
                             sede.setText(datosMedicosGenerales.get(i).getSede());
+                            horario.clear();;
                             horarioMedicos();
                         }
                     }
@@ -123,6 +124,7 @@ public class Consulta_registroActivity extends AppCompatActivity {
                             numId = 0;
                             numId = datosMedico.get(i).getNumIdentificacion();
                             sede.setText(datosMedico.get(i).getSede());
+                            horario.clear();
                             horarioMedicos();
                         }
                     }
@@ -169,6 +171,7 @@ public class Consulta_registroActivity extends AppCompatActivity {
 
         datosMedicosGenerales.clear();
         datosMedico.clear();
+        horario.clear();
         String tipoS = tipoCita.getSelectedItem().toString();
         if (tipoS.equals("Seleccione Opcion")) {
             Toast.makeText(getApplicationContext(), "Debe seleccionar una opcion ", Toast.LENGTH_SHORT).show();
@@ -215,9 +218,6 @@ public class Consulta_registroActivity extends AppCompatActivity {
                 ArrayAdapter<HorarioMedico> spinnerArrayAdapter = new ArrayAdapter<HorarioMedico>(getApplicationContext(),
                         android.R.layout.simple_spinner_item, horario);
                 fechas.setAdapter(spinnerArrayAdapter);
-
-
-
             } else {
                 Toast.makeText(getApplicationContext(), "El medico no tiene horarios disponibles ", Toast.LENGTH_SHORT).show();
             }
