@@ -24,7 +24,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Consulta_registroActivity extends AppCompatActivity {
+public class ConsultaregistroActivity extends AppCompatActivity {
 
     private Spinner tipoCita;
     private Spinner espe;
@@ -60,7 +60,7 @@ public class Consulta_registroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activityconsultaregistro);
+        setContentView(R.layout.activity_consultaregistro);
 
         medicos = (Spinner) findViewById(R.id.cbMedicos);
         espe = (Spinner) findViewById(R.id.cbEspecializaciones);

@@ -54,7 +54,7 @@ public class ActivityGestionSede extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitygestionsede);
+        setContentView(R.layout.activity_gestion_sede);
 
         buscada = null;
 

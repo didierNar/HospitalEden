@@ -22,7 +22,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Listado_sedeActivity extends AppCompatActivity {
+public class ListadosedeActivity extends AppCompatActivity {
 
     private List<Sede> sedes;
 
@@ -37,7 +37,7 @@ public class Listado_sedeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitylistadosede);
+        setContentView(R.layout.activity_listado_sede);
 
         ip = DireccionIP.getIp();
         connection = new HttpConnection();

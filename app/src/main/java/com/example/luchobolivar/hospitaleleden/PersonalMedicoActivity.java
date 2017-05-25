@@ -62,7 +62,7 @@ public class PersonalMedicoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitypersonalmedico);
+        setContentView(R.layout.activity_personal_medico);
 
         connection = new HttpConnection();
         ip = DireccionIP.getIp();
