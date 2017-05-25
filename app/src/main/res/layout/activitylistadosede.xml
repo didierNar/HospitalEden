@@ -9,7 +9,7 @@
     tools:context="com.example.luchobolivar.hospitaleleden.Listado_sedeActivity">
 
     <TextView
-        android:id="@+id/Lista de Sedes"
+        android:id="@+id/textField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
