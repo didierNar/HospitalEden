@@ -116,13 +116,13 @@ public class PersonalMedicoActivity extends AppCompatActivity {
         TipoPersonal tipo = (TipoPersonal) tipoPersonal.getSelectedItem();
         AreaEspecializacion area = (AreaEspecializacion) especializacion.getSelectedItem();
 
-        enlaceRegistro = "http://" + ip + "/serviciosWebHospital/crearUser.php?NUMERO_IDENTIFICACION=" + id + "&NOMBRE=" + nombre + "&APELLIDO=" + apellido + "&TELEFONO=" + tel +
-                "&EMAIL=" + email + "&DIRECCION=" + dir + "&USER_NAME=" + user + "&GENERO_ID=" + genero +
-                "&PASSWORD=" + pass + "&ROL=" + rol;
+        enlaceRegistro = "http://"+ip+"/serviciosWebHospital/crearUser.php?NUMERO_IDENTIFICACION="+id+
+                "&NOMBRE="+nombre+"&APELLIDO="+apellido+"&TELEFONO="+tel+"&EMAIL="+email+"&DIRECCION="+dir+
+                "&USER_NAME="+user+"&GENERO_ID="+gener+"&PASSWORD="+pass+"&ROL="+rol;
 
         enlaceRegistroPersonal = "http://" + ip + "/serviciosWebHospital/crearPersonal.php?USUARIO_NUMERO_IDENTIFICACION="
                 + id + "&TIPO_PERSONAL_ID=" + tipo.getId() + "&AREA_ESPECIALIZACION_ID=" + area.getId();
-        Log.e("Enlace", enlaceRegistro);
+        Log.e("Enlace", enlaceRegistroPersonal);
 
 
         new registrarUsuario().execute(enlaceRegistro);
@@ -411,31 +411,30 @@ public class PersonalMedicoActivity extends AppCompatActivity {
             }
         }
 
-
-        public int obtenerDatosJSONRegPersonal(String respuesta) {
-            Log.e("Respuesta", respuesta);
-            int resultado = 0;
-            try {
-                JSONObject json = new JSONObject(respuesta);
-                //Log.e("Tamaño ", json.getString("registro")+"");
-                String res = json.getString("registro");
-                //Verficamos que el tamaño del json sea mayor que 0
-                if (res.equals("1")) {
-                    resultado = 1;
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return resultado;
-        }
-
-
         @Override
         protected String doInBackground(String... strings) {
-            String resultado = connection.enviarDatosGet(enlaceRegistro);
+            String resultado = connection.enviarDatosGet(enlaceRegistroPersonal);
             return resultado;
         }
     }
+
+    public int obtenerDatosJSONRegPersonal(String respuesta) {
+        Log.e("Respuesta", respuesta);
+        int resultado = 0;
+        try {
+            JSONObject json = new JSONObject(respuesta);
+            //Log.e("Tamaño ", json.getString("registro")+"");
+            String res = json.getString("registro");
+            //Verficamos que el tamaño del json sea mayor que 0
+            if (res.equals("1")) {
+                resultado = 1;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
 
 
     public void eliminarPersonal(View v) {
@@ -595,7 +594,7 @@ public class PersonalMedicoActivity extends AppCompatActivity {
     }
 
     public void cargarAreasEsp(){
-        enlaceListarEspe = "http://"+ip+"/serviciosWebHospital/listarTiposEspecializacion.php";
+        enlaceListarEspe = "http://"+ip+"/serviciosWebHospital/listarAreasEspecializacion.php";
         new ListarAreasEspe().execute(enlaceListarEspe);
     }
 

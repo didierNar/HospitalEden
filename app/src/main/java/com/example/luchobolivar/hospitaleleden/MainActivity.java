@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (user.getRol().equals("personalMedico")){
 
             UsuarioLogueado.setUsuario(user);
-            Intent i = new Intent(getApplicationContext(), PersonalMedicoActivity.class);
+            Intent i = new Intent(getApplicationContext(), MedicoActivity.class);
             UsuarioLogueado.setUsuario(user);
             startActivity(i);
 

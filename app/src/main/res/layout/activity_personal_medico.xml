@@ -8,19 +8,6 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ImageButton
-        android:layout_width="108dp"
-        android:layout_height="82dp"
-        app:srcCompat="@drawable/consulta"
-        android:id="@+id/btBuscarPer"
-        android:layout_y="3dp"
-        android:layout_x="262dp"
-        android:onClick="buscarPersonal"/>
-
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -33,20 +20,38 @@
             android:orientation="vertical"
             android:weightSum="1">
 
-            <EditText
-                android:id="@+id/etIdentificacionPer"
-                android:layout_width="235dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="25dp"
-                android:gravity="center_vertical"
-                android:drawablePadding="10dp"
-                android:padding="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="30dp"
-                android:hint="Identificacion"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etIdentificacionPer"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textSize="25dp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="10dp"
+                    android:padding="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:hint="Identificacion"
+                    android:layout_weight="2.25" />
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="82dp"
+                    app:srcCompat="@drawable/consulta"
+                    android:id="@+id/btBuscarPer"
+                    android:layout_y="3dp"
+                    android:layout_x="262dp"
+                    android:onClick="buscarPersonal"
+                    android:layout_weight="1.48" />
+
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/etNombrePer"

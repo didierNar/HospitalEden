@@ -186,11 +186,10 @@ public class ActivityPacienteRegimenCiudad extends AppCompatActivity {
             int r = obtenerDatosJSONCiudad(resultado);
             if (r > 0) {
                 ArrayAdapter<Ciudad> spinnerArrayAdapter = new ArrayAdapter<Ciudad>(getApplicationContext(),
-                        android.R.layout.simple_spinner_item, ciudades);
+                        android.R.layout.simple_list_item_1, ciudades);
                 spCiudades.setAdapter(spinnerArrayAdapter);
             } else {
                 Toast.makeText(getApplicationContext(), "No hay ciudades registrados", Toast.LENGTH_SHORT).show();
-                spCiudades.setVisibility(View.INVISIBLE);
             }
         }
 
