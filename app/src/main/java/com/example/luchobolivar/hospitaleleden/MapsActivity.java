@@ -76,7 +76,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         new listarSedes().execute(enlace);
 
         enlaceLugarCita = "http://"+ip+"/serviciosWebHospital/UbicacionCitasUsuario.php?USUARIO_NUMERO_IDENTIFICACION="+
-        logueado.getIdentificacion();
+        UsuarioLogueado.getUsuario().getIdentificacion();
 
         new poliLineas().execute(enlaceLugarCita);
 
