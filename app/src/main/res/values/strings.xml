@@ -25,4 +25,11 @@
         <item>Alergologia</item>
         <item>Ginecologia</item>
     </string-array>
+    <string-array name="tipoCitaHisto">
+        <item>Solicitado</item>
+        <item>Procesada</item>
+        <item>Cancelada</item>
+    </string-array>
+
+
 </resources>

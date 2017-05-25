@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activitymain);
 
         etUsuario = (EditText) findViewById(R.id.etNombreUsuario);
         etPass = (EditText) findViewById(R.id.etPassword);
@@ -69,15 +69,13 @@ public class MainActivity extends AppCompatActivity {
         } else if (user.getRol().equals("paciente")){
 
             Intent i = new Intent(getApplicationContext(), PacienteActivity.class);
-            i.putExtra("usuario", usuario);
-            i.putExtra("password", password);
+            UsuarioLogueado.setUsuario(user);
             startActivity(i);
 
         } else if (user.getRol().equals("personalMedico")){
 
             Intent i = new Intent(getApplicationContext(), PersonalMedicoActivity.class);
-            i.putExtra("usuario", usuario);
-            i.putExtra("password", password);
+            UsuarioLogueado.setUsuario(user);
             startActivity(i);
 
         }

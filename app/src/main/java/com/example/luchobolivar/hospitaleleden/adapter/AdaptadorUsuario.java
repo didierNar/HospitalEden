@@ -52,7 +52,7 @@ public class AdaptadorUsuario extends BaseAdapter {
 
         if (convertView == null){
             LayoutInflater inf = (LayoutInflater) actividad.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inf.inflate(R.layout.elemento_lista, null);
+            v = inf.inflate(R.layout.elementolista, null);
         }
 
         Usuario usuario = usuarios.get(position);

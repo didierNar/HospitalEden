@@ -1,7 +1,6 @@
 package com.example.luchobolivar.hospitaleleden;
 
 import android.content.Intent;
-import android.hardware.Camera;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,9 +14,7 @@ import android.widget.Toast;
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
 import com.example.luchobolivar.hospitaleleden.modelo.AreaEspecializacion;
 import com.example.luchobolivar.hospitaleleden.modelo.DireccionIP;
-import com.example.luchobolivar.hospitaleleden.modelo.PersonalMedico;
 import com.example.luchobolivar.hospitaleleden.modelo.TipoPersonal;
-import com.example.luchobolivar.hospitaleleden.modelo.Usuario;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,7 +62,7 @@ public class PersonalMedicoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_medico);
+        setContentView(R.layout.activitypersonalmedico);
 
         connection = new HttpConnection();
         ip = DireccionIP.getIp();

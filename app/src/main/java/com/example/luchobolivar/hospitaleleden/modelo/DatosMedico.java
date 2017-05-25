@@ -10,12 +10,14 @@ public class DatosMedico {
     private String nombre;
     private String apellido;
     private String sede;
+    private int idSede;
 
-    public DatosMedico(int numIdentificacion, String nombre, String apellido, String sede) {
+    public DatosMedico(int numIdentificacion, String nombre, String apellido, String sede, int idSede) {
         this.numIdentificacion = numIdentificacion;
         this.nombre = nombre;
         this.apellido = apellido;
         this.sede = sede;
+        this.idSede = idSede;
     }
 
     public int getNumIdentificacion() {
@@ -48,6 +50,14 @@ public class DatosMedico {
 
     public void setSede(String sede) {
         this.sede = sede;
+    }
+
+    public int getIdSede() {
+        return idSede;
+    }
+
+    public void setIdSede(int idSede) {
+        this.idSede = idSede;
     }
 
     @Override

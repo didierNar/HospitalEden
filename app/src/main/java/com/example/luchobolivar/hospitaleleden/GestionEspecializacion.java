@@ -35,7 +35,7 @@ public class GestionEspecializacion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gestion_especializacion);
+        setContentView(R.layout.activitygestionespecializacion);
 
         connection = new HttpConnection();
         ip = DireccionIP.getIp();

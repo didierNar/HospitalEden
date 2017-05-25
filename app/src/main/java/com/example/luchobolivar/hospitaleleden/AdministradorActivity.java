@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.luchobolivar.hospitaleleden.modelo.PersonalMedico;
-
 public class AdministradorActivity extends AppCompatActivity {
 
     private TextView user;
@@ -15,7 +13,7 @@ public class AdministradorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_administrador);
+        setContentView(R.layout.activityadministrador);
 
         user = (TextView) findViewById(R.id.tvUsuario);
         user.setText("Bienvenido Administrador");

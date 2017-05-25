@@ -43,7 +43,7 @@ public class GestionarAdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gestionar_admin);
+        setContentView(R.layout.activitygestionaradmin);
 
         etNombre = (EditText) findViewById(R.id.etNombreAdmin);
         etApellido = (EditText) findViewById(R.id.etApellidoAdmin);

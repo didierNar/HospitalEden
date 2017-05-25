@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class PacienteActivity extends AppCompatActivity {
 
@@ -13,7 +11,7 @@ public class PacienteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_paciente);
+        setContentView(R.layout.activitypaciente);
 
 
     }
@@ -26,7 +24,7 @@ public class PacienteActivity extends AppCompatActivity {
 
     public void edicionCita(View view){
 
-        Intent intentEdi = new Intent(this, Edicion_CitaActivity.class);
+        Intent intentEdi = new Intent(this, Listado_CitasActivity.class);
         startActivity(intentEdi);
     }
 

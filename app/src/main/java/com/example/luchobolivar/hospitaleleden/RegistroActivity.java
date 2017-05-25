@@ -12,9 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
-import com.example.luchobolivar.hospitaleleden.modelo.AreaEspecializacion;
 import com.example.luchobolivar.hospitaleleden.modelo.DireccionIP;
-import com.example.luchobolivar.hospitaleleden.modelo.TipoPersonal;
 import com.example.luchobolivar.hospitaleleden.modelo.Usuario;
 
 import org.json.JSONArray;
@@ -53,7 +51,7 @@ public class RegistroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activityregistro);
 
         connection = new HttpConnection();
         etNombre = (EditText) findViewById(R.id.etNombre);

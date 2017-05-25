@@ -12,7 +12,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.luchobolivar.hospitaleleden.HttpURLConnection.HttpConnection;
-import com.example.luchobolivar.hospitaleleden.R;
 import com.example.luchobolivar.hospitaleleden.modelo.Ciudad;
 import com.example.luchobolivar.hospitaleleden.modelo.Departamento;
 import com.example.luchobolivar.hospitaleleden.modelo.DireccionIP;
@@ -46,7 +45,7 @@ public class ActivityRegistroSede extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro_sede);
+        setContentView(R.layout.activityregistrosede);
 
         ip = DireccionIP.getIp();
         connection = new HttpConnection();

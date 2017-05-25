@@ -57,7 +57,7 @@
 
             <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="15dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/spCiudadesSedeGestion" />
 
             <Space
@@ -67,7 +67,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="61dp">
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -80,14 +80,12 @@
                         android:text="Seleccione una sede"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView18"
-                        android:layout_weight="0.55" />
+                        android:id="@+id/textView18" />
 
                     <Spinner
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/spSedesGestion"
-                        android:layout_weight="0.57" />
+                        android:layout_height="match_parent"
+                        android:id="@+id/spSedesGestion" />
 
                 </LinearLayout>
 
@@ -150,16 +148,14 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.04" />
+                    android:layout_height="13dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="32dp"
                     app:srcCompat="@drawable/editar"
                     android:id="@+id/btnEditarSede"
-                    android:onClick="editarSede"
-                    android:layout_weight="0.09" />
+                    android:onClick="editarSede" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -181,11 +177,10 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="32dp"
                     app:srcCompat="@drawable/back"
                     android:id="@+id/btnRegresarSede"
-                    android:onClick="regresarAdmin"
-                    android:layout_weight="0.08" />
+                    android:onClick="regresarAdmin" />
 
             </LinearLayout>
         </LinearLayout>
